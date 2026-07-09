@@ -36,7 +36,7 @@ Durante o desenvolvimento do projeto, participei das seguintes atividades:
 
 🎥 O funcionamento da aplicação pode ser visualizado no vídeo de demonstração:
 
-**https://youtu.be/SEU_LINK](https://youtu.be/nb_mKMiEEC8?feature=shared**
+**[https://youtu.be/SEU_LINK](https://youtu.be/nb_mKMiEEC8?feature=shared)**
 
 ## Equipe
 
