@@ -1,0 +1,60 @@
+<!-- Beatriz Lima Evangelista e Julia Santos de Souza -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="py-5">
+
+    <div class="container">
+        <div class="mb-4">
+            <h1 class="titulo-principal">Site de Receitas</h1>
+            <p class="text-secondary">Desenvolvido por Beatriz Lima Evangelista e Julia Santos de Souza</p>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            
+            <div class="col">
+                <div class="card shadow-sm h-100 custom-card">
+                    <h2 class="card-header bg-white py-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3565/3565418.png" width="40" alt="Ícone de Receitas">
+                        Receitas
+                    </h2>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <p class="card-text text-muted">
+                            Gerencie todo o seu catálogo culinário em um só lugar. Aqui você pode cadastrar novas fórmulas gastronômicas com detalhamento de ingredientes e modo de preparo, além de listar, buscar e revisar todas as receitas já armazenadas no sistema.
+                        </p>
+                        <div class="d-grid gap-2 mt-4">
+                            <a th:href="@{/receitas/nova}" class="btn btn-purple py-2 fw-semibold">Cadastrar Receita</a>
+                            <a th:href="@{/receitas/listar}" class="btn btn-outline-secondary py-2">Listar Receitas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card shadow-sm h-100 custom-card">
+                    <h2 class="card-header bg-white py-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3502/3502688.png" width="40" alt="Ícone de Categorias">
+                        Categorias
+                    </h2>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <p class="card-text text-muted">
+                            Organize suas receitas de forma estratégica e facilite a navegação. Crie classificações personalizadas como Doces, Salgados, Massas ou Pratos Veganos, e gerencie os grupos existentes para manter seu acervo culinário sempre bem estruturado.
+                        </p>
+                        <div class="d-grid gap-2 mt-4">
+                            <a th:href="@{/categorias/nova}" class="btn btn-purple py-2 fw-semibold">Cadastrar Categoria</a>
+                            <a th:href="@{/categorias/listar}" class="btn btn-outline-secondary py-2">Listar Categorias</a>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            
+        </div>        
+    </div>
+
+</body>
+</html>

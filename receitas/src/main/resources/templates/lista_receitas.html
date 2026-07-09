@@ -1,0 +1,53 @@
+<!-- Beatriz Lima Evangelista e Julia Santos de Souza -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Receitas</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="py-5">
+	<div class="container">
+		<div class="mb-4">
+			<h1 class="titulo-principal">Receitas Cadastradas</h1>
+			<p class="display-8">Desenvolvido por Beatriz Lima Evangelista e Julia Santos de Souza</p>
+		</div>
+		
+		<div>
+			<table class="table table-striped"> 
+					<thead> 
+						<tr> 
+							<th scope="col">ID</th> 
+							<th scope="col">Nome</th>
+							<th scope="col">Categoria</th> 
+							<th scope="col">Dificuldade</th>  
+							<th scope="col">Tempo Preparo</th> 
+							<th scope="col">Descrição</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr th:each="receita : ${listaReceitas}"> 
+							<th scope="row" th:text="${receita.id}"></th> 
+							<td th:text="${receita.nome}"></td> 
+							<td th:text="${receita.categoria.nome}"></td> 
+							<td th:text="${receita.dificuldade.exibicao}"></td> 
+							<td th:text="${receita.tempoPreparo}"></td> 
+							<td th:text="${receita.descricao}"></td> 
+						</tr> 
+					</tbody> 
+				</table> 
+				
+				<div>
+				    <a th:href="@{/receitas/nova}" class="btn btn-purple">
+				        Novas Receitas
+				    </a> 
+
+				    <a th:href="@{/}" class="btn btn-outline-secondary" style="text-decoration: none; display: inline-block;">
+				        Voltar ao Inicio
+				    </a>
+				</div>
+		</div>
+	</div>
+</body>
+</html>

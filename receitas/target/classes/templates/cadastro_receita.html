@@ -1,0 +1,61 @@
+<!-- Beatriz Lima Evangelista e Julia Santos de Souza -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Receita</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="py-5">
+	<div class="container">
+		<form action="/receitas/salvar" method="post">
+			<div class="mb-4">
+				<h1 class="titulo-principal">Cadastrar Receita</h1>
+				<p class="display-8">Desenvolvido por Beatriz Lima Evangelista e Julia Santos de Souza</p>
+			</div>
+				
+			<div class="mb-3">
+			<label for="txtNome" class="form-label">Nome</label>
+			<input type="text" name="txtNome" placeholder="Nome da Receita" class="form-control" required>
+			</div>
+			
+			<div class="mb-3">
+				<label for="selCategoria" class="form-label">Categoria</label>
+				<div class="col-4">
+					<select name="selCategoria" class="form-select" required>
+						<option value="">-- Selecione uma Categoria --</option>
+					    <option th:each="categoria : ${todasCategorias}" 
+								th:value="${categoria.id}" 
+					    		th:text="${categoria.nome}"></option>
+					</select>
+				</div>
+			</div>	
+
+			<div class="mb-3">
+				<label for="txtDificuldade" class="form-label">Dificuldade</label>
+				<div class="col-4">
+					<select name="selDificuldade" class="form-select" required>
+						<option value="">-- Selecione uma Dificuldade--</option>
+						<option th:each="dif : ${todasDificuldades}" 
+							    th:value="${dif.name()}" 
+							    th:text="${dif.exibicao}"></option>
+					</select>
+				</div>			
+			</div>	
+						
+			<div class="mb-3">
+				<label for="txtTempoPreparo" class="form-label">Tempo de Preparo</label><br>
+				<input type="text" name="txtTempoPreparo" placeholder="Ex: 45 min" class="form-control" required/>
+			</div>
+			
+			<div class="mb-3">
+				<label for="txtDescricao" class="form-label">Descrição</label>
+				<textarea name="txtDescricao" rows="4" placeholder="Descreva a receita..." class="form-control" required></textarea>
+			</div>
+			
+			<button type="submit" class="btn btn-purple">Cadastrar</button>
+		</form>
+	</div>
+</body>
+</html>
